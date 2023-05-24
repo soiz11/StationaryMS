@@ -1,0 +1,2 @@
+# StationaryMS
+Mini project SPM
