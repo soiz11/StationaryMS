@@ -1,69 +1,65 @@
-import React, { useState } from 'react'
-import "./Login.css"
+import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import {auth} from "../firebase-config"
-import {useNavigate} from "react-router-dom"
+import { auth } from "../firebase-config";
+import { useNavigate } from "react-router-dom";
 
-export let nullUser = true;
+let user = null;
+let userLocal = JSON.parse(localStorage.getItem("USERDATA"));
+
+export const Authorized = user || userLocal;
 
 const Login = () => {
-  
-  const [loginEmail, setLoginEmail]  = useState("");
-  const [loginPassword, setLoginPassword]  = useState("");
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  
-  //const [loggedUser, setLoggedUser] = useState();
 
-
- /* useEffect(() => {
-    console.log(loggedUser);
-  }, [loggedUser]);*/
-
- 
-  console.log(nullUser);
-
-  const login =  async ()=>{
-
-   
+  const login = async () => {
     try {
-        const userCredentials = await signInWithEmailAndPassword(auth,loginEmail,loginPassword);
-        const user = userCredentials.user;
-        nullUser = false; 
-        console.log(user)
-        //const nullUser = user === null;
-        //console.log(nullUser)
-        navigate("/home", { nullUser });
-      
+      const userCredentials = await signInWithEmailAndPassword(
+        auth,
+        loginEmail,
+        loginPassword
+      );
+      const loggedUser = userCredentials.user;
+      localStorage.setItem("USERDATA", JSON.stringify(loggedUser));
+      user = loggedUser;
+      navigate("/home");
+    } catch (error) {
+      setError(error.message);
+      console.log(error.message);
     }
-    catch(error){
-        setError(error.message);
-        console.log(error.message);
-      
-    }
+  };
 
- 
-
-  } 
-
-
- 
- 
   return (
     <div>
-        <p>Login</p>
+      <h className="text-6xl font-bold text-emerald-700">Sign in</h>
+      <br />
+      <div className="pt-8 text-xl font-bold">
+        <label>User Name</label>
+        <br />
+        <input className="text-center p-2 w-1/2 text-lg font-semibold border-2 rounded-lg border-gray-500"
+          onChange={(event) => {
+            setLoginEmail(event.target.value);
+          }}
+        ></input>
+      </div>
+      <br />
+      <div className="pt-8 text-xl font-bold">
+        <label>Password</label>
+        <br />
+        <input className="text-center p-2 w-1/2 text-lg font-semibold border-2 rounded-lg border-gray-500"
+          onChange={(event) => {
+            setLoginPassword(event.target.value);
+          }}
+        ></input>
+        <br />
+      </div>
+      <button className="mt-4 bg-emerald-700 text-white text-center p-2 w-32 text-lg font-bold transform hover:scale-105 rounded-lg " onClick={login}>Login</button>
 
-        <label>Username</label><br/>
-        <input onChange={(event)=>{setLoginEmail(event.target.value)}}></input><br/>
-
-        <label>Password</label><br/>
-        <input onChange={(event)=>{setLoginPassword(event.target.value)}}></input><br/>
-
-        <button onClick={login}>Login</button>
-
-        {error && <p>{error}</p>}
+      {error && <p>{error}</p>}
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

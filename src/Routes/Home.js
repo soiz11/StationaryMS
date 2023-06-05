@@ -10,8 +10,7 @@ const Home = () => {
   return (
     <>
       <Navbar/>
-      <div className='test'>home</div>
-    
+      <div className='test'>home</div>    
     </>
   )
 }

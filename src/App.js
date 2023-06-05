@@ -1,10 +1,12 @@
+import "./App.css";
+
 import {Routes , Route, Navigate} from "react-router-dom";
 import Login from "./Routes/Login";
 import Home from "./Routes/Home";
 import New from "./Routes/New";
 import Records from "./Routes/Records";
 import Profile from "./Routes/Profile";
-import {nullUser} from "./Routes/Login"
+import {Authorized} from "./Routes/Login"
 
 
 
@@ -15,11 +17,11 @@ function App() {
   
 
   const PrivateRoute = ({children}) =>{
-    return nullUser ? <Navigate to = "/"/> : children ;
+    return !Authorized ? <Navigate to = "/"/> : children ;
   };
 
   return (
-    <>
+    <div className="App">
       
           <Routes>
 
@@ -29,11 +31,11 @@ function App() {
             <Route exact path ="/new" element={<PrivateRoute><New/></PrivateRoute> }/>
             <Route exact path ="/records" element={<PrivateRoute><Records/></PrivateRoute> }/>
             <Route exact path ="/profile" element={<PrivateRoute><Profile/></PrivateRoute> }/>
-        
+            <Route exact path ="*" element={<Login/>}/>
            
           </Routes>
      
-    </>
+    </div>
   );
 }
 
