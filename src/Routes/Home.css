@@ -1,4 +1,316 @@
-.test{
-    margin-top: 0px;
+*{
     color: black;
+    padding:0;
+    margin: 0;
+}
+
+
+/*.topic{
+    margin-top: 10px;
+    color: rgb(255, 255, 255);
+}*/
+.test{
+    margin: 20px 0 100px 0;
+}
+
+.hheader{
+    color: #860000;
+    font-size: 34px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 80px;
+    text-align: center;
+    
+}
+
+
+.hmain-container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+}
+
+.hmain-box{
+    background-color: transparent;
+    margin: 0 250px;
+    display: flex;
+    margin-top: 10px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid #860000;
+    color: black;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
+    /*box-shadow: inset 0 0 10px rgba(199, 135, 135, 0.5);*/
+    
+}
+
+.hmain-less{
+    background-color: transparent;
+    margin: 0 250px;
+    display: flex;
+    margin-top: 10px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid #860000;
+    color: black;
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(238, 0, 0, 0.5);
+   
+}
+
+.hname,.hquantity{
+    color: black;
+    font-weight: bold;
+}
+
+.htext-line{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex:5;
+    margin: 0 30px;
+    font-size: 18px;
+    color: black;
+}
+
+.hbtns{
+    display: flex;
+    
+   
+}
+
+.hreloadbtn{
+    color:black;
+    width: 100px;
+    background-color: #ffc700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+   
+}
+
+.hreleasebtn{
+    color: white;
+    width: 100px;
+    background-color: #860000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+   
+   
+}
+
+.selected-item-reload{
+    background-color: #ffc700;
+    position: absolute;
+    left:50%;
+
+    transform: translate(-50%,50%);
+    top :20%;
+    margin: 0 auto;
+    z-index:7;
+    height: 300px;
+    width: 300px;
+    border-radius: 5px;
+    border: 2px solid #860000;
+    
+}
+
+.hreload-upper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 0 0;
+    margin: 0 20px;
+    
+}
+
+.hitem-name, .hclosebtn{
+    font-size:25px ;
+    color: black;
+    font-weight: bold;
+}
+
+.hclosebtn{
+    background-color: #860000;
+    padding: 4px 15px;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+.hdata{
+    width: 100%;
+    font-size: 20px;
+    margin: 0 20px;
+    padding: 5px 0;
+}
+
+.hdata input{
+    width:250px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 5px 0 5px 5px;
+    border: 2px solid #860000;
+
+    
+}
+
+.hdataname{
+   color: black; 
+   font-weight: 600;
+   padding-bottom: 2px;
+}
+.hreloadnowbtn{
+    padding: 3px 0;
+    margin: 10px 20px 0 20px;
+    background-color: #860000;
+    width: 100px;
+    text-align: center;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+.selected-item-release{
+    background-color: #860000;
+    position: absolute;
+    left:50%;
+
+    transform: translate(-50%,50%);
+    top :20%;
+    margin: 0 auto;
+    z-index:7;
+    height: 300px;
+    width: 300px;
+    border-radius: 5px;
+    border: 2px solid #ffc700;
+    
+}
+
+.hreload-upper-re{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 0 0;
+    margin: 0 20px;
+    
+}
+
+.hitem-name-re, .hclosebtn-re{
+    font-size:25px ;
+    color: white;
+    font-weight: bold;
+}
+
+.hclosebtn-re{
+    background-color: #ffc700;
+    padding: 4px 15px;
+    border-radius: 3px;
+    color: black;
+    cursor: pointer;
+}
+
+.hdata-re{
+    width: 100%;
+    font-size: 20px;
+    margin: 0 20px;
+    padding: 5px 0;
+}
+
+.hdata-re input{
+    width:250px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 5px 0 5px 5px;
+    border: 2px solid #ffc700;
+
+    
+}
+
+.hdataname-re{
+   color: white; 
+   font-weight: 600;
+   padding-bottom: 2px;
+}
+.hreloadnowbtn-re{
+    padding: 3px 0;
+    margin: 10px 20px 0 20px;
+    background-color: #ffc700;
+    width: 100px;
+    text-align: center;
+    color: black;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+
+.success-message{
+    background-color: #ffc700;
+    position: absolute;
+    left:50%;
+    transform: translate(-50%,50%);
+    top :40%;
+    margin: 0 auto;
+    z-index:7;
+    height: 100px;
+    width: 450px;
+    border-radius: 5px;
+    border: 2px solid #860000;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0 30px;
+    
+}
+
+.success-text{
+    font-size: 22px;
+    color: black;
+    font-weight: bold;
+}
+
+.success-close{
+    background-color: #860000;
+    padding: 4px 15px;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+.visibleloader{
+    background:white url("../newloader.gif") no-repeat center;
+    height:85vh;
+    width:100%;
+    position:fixed;
+    z-index:10;
+    display: flex;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+
+    
+}
+
+.hideloader{
+    background:white url("../newloader.gif") no-repeat center ;
+    height:85vh;
+    width:100%;
+    position: fixed;
+    z-index: -1;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.5s ease-out, z-index 0.5s ease-out;
 }

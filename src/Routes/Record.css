@@ -1,0 +1,130 @@
+.visibleloader{
+    background:white url("../newloader.gif") no-repeat center;
+    height:100vh;
+    width:100%;
+    position:fixed;
+    top: 30px;
+    z-index:4;
+    display: flex;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+
+    
+}
+
+.content-record{
+    margin: 100px 0 150px 0;
+}
+
+.hideloader{
+    background:white url("../newloader.gif") no-repeat center ;
+    height:100vh;
+    width:100%;
+    position: fixed;
+    top: 30px;
+    z-index: -1;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.5s ease-out, z-index 0.5s ease-out;
+}
+
+.box-record-release{
+    background-color: #860000;
+    color: white;
+    border-radius: 7px;
+    margin: 25px 300px;
+    height: 90px;
+    border: 2px solid #860000;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.3);
+}
+
+.box-record-release *{
+    color: white;
+}
+
+.box-record-reload *{
+    color:black;
+}
+.box-record-reload{
+    background-color:#ffc700;
+    color: black;
+    border-radius: 7px;
+    margin: 25px 300px;
+    height: 90px;
+    border: 2px solid #860000;
+    box-shadow: 0 5px 3px rgba(0, 0, 0, 0.3);
+}
+
+   
+.upper-row{
+    display: flex;
+    margin:0 30px;
+   
+}
+
+.lower-row{
+    display: flex;
+    justify-content: space-between;
+    margin:0 30px;
+
+}
+
+.udata{
+    padding:5;
+    font-size: 25px;
+}
+
+.uname{
+    flex: 7;
+    padding: 5px 0;
+}
+.ustatus{
+    flex:1;
+    margin-left: 100px;
+    padding: 5px 0;
+}
+
+.uquantity{
+    flex:1;
+    padding: 5px 0;
+    text-align: right;
+}
+
+.ldate{
+    padding: 0  0 5px 0;
+}
+
+.lmail{
+    padding: 0  0 5px 0;
+}
+/*
+.topic{
+    color: white;
+}
+
+.rcdstatus{
+    color: white;
+    text-align: left;
+    position: absolute;
+    margin-left: 850px;
+
+}
+
+.rcdquantity{
+    color: white;
+    text-align: right;
+    margin-right: 17px;
+    
+}
+
+.rcdname{
+    color:white;
+    text-align: right;
+    
+}
+
+.rcddate{
+    color: white;
+    text-align: right;
+    margin-right: 17px;
+}*/

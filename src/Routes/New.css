@@ -1,0 +1,128 @@
+.new-wrapper{
+    width: 500px;
+    margin: 0 auto;
+    padding: 0 50px;
+    margin-top: 150px;
+    position: relative;
+    
+}
+
+
+.newitems{
+    color: #860000;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    
+   
+
+}
+
+.error-area{
+    width:400px;
+    height: 40px;
+    background-color: white;
+    position: absolute;
+    margin-top: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0px 15px #800c0c;
+    text-align: center;
+    opacity: 0; 
+    transition: opacity 0.5s ease;
+    border: none;
+    
+  }
+
+  .error-area.show {
+    display: block; 
+    opacity: 1;
+  }
+
+  .error-area h2{
+    color: #860000;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+    
+  }
+  
+/*
+.newname{
+    position: absolute;
+    left: 30%;
+
+}
+
+.newquantity{
+    position: absolute;
+    left: 30%;
+
+}
+
+.newdiscription{
+    position: absolute;
+    left: 30%;
+
+}
+.newinput{
+    position: absolute;
+    left: 30%;
+    border-radius: 10px;
+    border: 3px solid rgb(147, 57, 57);
+    padding-right: 200px;
+}
+*/
+.newbtn{
+    /*
+    position: absolute;
+    left: 30%;*/
+    margin-top: 5px;
+    background-color: #ffc700 ;
+    color: black;
+    border-radius: 5px;
+    width: 100px;
+    border: none;
+    height: 40px;
+    transition: all 0.3s;
+    cursor: pointer;
+
+    
+    
+}
+
+.newbtn:hover{
+    background-color: #860000;
+    color: white;
+
+}
+
+
+
+.activebtn{
+    background-color: #860000;
+    color:white;
+    border-radius: 5px;
+    width: 200px;
+    border: none;
+    height: 45px;
+    transition: all 0.3s;
+    margin-top: 5px;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+.newinput{
+    width: 400px;
+    border: solid 2px #860000;
+    border-radius:5px;
+    outline: none;
+    font-size: 18px;
+    height: 40px;
+    padding: 5px;
+    margin-bottom: 15px;
+
+}
+
+.new-wrapper label{
+    font-weight: bold;
+}
