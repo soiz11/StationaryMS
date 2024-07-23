@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
+import "./Login.css"
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase-config";
-import { useNavigate } from "react-router-dom";
+import {auth} from "../firebase-config"
+import {useNavigate} from "react-router-dom"
+import logo from './images/logo.png';
 
 let user = null;
 let userLocal = JSON.parse(localStorage.getItem("USERDATA"));
@@ -9,57 +11,96 @@ let userLocal = JSON.parse(localStorage.getItem("USERDATA"));
 export const Authorized = user || userLocal;
 
 const Login = () => {
-  const [loginEmail, setLoginEmail] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+  
+  const [loginEmail, setLoginEmail]  = useState("");
+  const [loginPassword, setLoginPassword]  = useState("");
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  
+  //const [loggedUser, setLoggedUser] = useState();
 
-  const login = async () => {
+
+ /* useEffect(() => {
+    console.log(loggedUser);
+  }, [loggedUser]);*/
+
+ 
+
+
+  const login =  async ()=>{
+
+   
     try {
-      const userCredentials = await signInWithEmailAndPassword(
-        auth,
-        loginEmail,
-        loginPassword
-      );
-      const loggedUser = userCredentials.user;
-      localStorage.setItem("USERDATA", JSON.stringify(loggedUser));
-      user = loggedUser;
-      navigate("/home");
-    } catch (error) {
-      setError(error.message);
+        const userCredentials = await signInWithEmailAndPassword(auth,loginEmail,loginPassword);
+        const loggedUser = userCredentials.user;
+        localStorage.setItem("USERDATA", JSON.stringify(loggedUser));
+        user = true; 
+        navigate("/home");
+        
+      
+    }
+    catch (error) {
+      if (error.code === "auth/wrong-password" || "auth/user-not-found") {
+        setError("Your Username or Password is incorrect");
+      } else {
+        setError(error.message);
+      }
       console.log(error.message);
     }
-  };
 
+ 
+
+  } 
+
+
+  {error && <p>{error}</p>}
+ 
   return (
-    <div>
-      <h className="text-6xl font-bold text-emerald-700">Sign in</h>
-      <br />
-      <div className="pt-8 text-xl font-bold">
-        <label>User Name</label>
-        <br />
-        <input className="text-center p-2 w-1/2 text-lg font-semibold border-2 rounded-lg border-gray-500"
-          onChange={(event) => {
-            setLoginEmail(event.target.value);
-          }}
-        ></input>
-      </div>
-      <br />
-      <div className="pt-8 text-xl font-bold">
-        <label>Password</label>
-        <br />
-        <input className="text-center p-2 w-1/2 text-lg font-semibold border-2 rounded-lg border-gray-500"
-          onChange={(event) => {
-            setLoginPassword(event.target.value);
-          }}
-        ></input>
-        <br />
-      </div>
-      <button className="mt-4 bg-emerald-700 text-white text-center p-2 w-32 text-lg font-bold transform hover:scale-105 rounded-lg " onClick={login}>Login</button>
+    <div className="container">
 
-      {error && <p>{error}</p>}
+      <div className='box1'>
+        <div className='imgbox'>
+          <img className='logo' src={logo} alt="ITUM Logo"/>
+          <h2>ITUM Stationaries</h2>
+        </div>
+        <div className="login-form">
+          <h2 className='text'>Login</h2>
+          <div className="form-group">
+            {/*<label className="label" htmlFor="username">Username</label>*/}
+            <input
+              className="input"
+              type="text"
+              id="loginEmail"
+              value={loginEmail}
+              placeholder='Username'
+              onChange={(e) => setLoginEmail(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            {/*<label className="label" htmlFor="password">Password</label>*/}
+            <input
+              className="input"
+              type="password"
+              id="loginPassword"
+              value={loginPassword}
+              placeholder='Password'
+              onChange={(e) => setLoginPassword(e.target.value)}
+            />
+          </div>
+          <div className='btn-container'>
+          <button className="button" onClick={login}>Login</button>
+          </div>
+        </div>
+      </div>
+      <div className={`error-box ${error ? 'show' : ''}`}>
+        {error && <h2>{error}</h2>}
+      </div>
+      
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
+
+
+

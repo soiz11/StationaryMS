@@ -1,0 +1,181 @@
+h2{
+    color:black;
+}
+
+label{
+    color: black;
+}
+
+input{
+    color: #000;
+}
+
+.prof-main-container{
+    display:flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 170px auto;
+   
+
+
+}
+
+.update-box{
+    border: 2px solid #860000;
+    border-radius: 8px;
+    height: fit-content;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+}
+
+.p-update-heading{
+    width: 100%;
+    text-align: center;
+    color: black;
+    padding: 20px 0 0 0;
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+
+.prof-update-line{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 50px;
+    height:80px;
+    
+}
+
+.u-label{
+    color: black;
+    display: flex;
+    font-weight: 600;
+}
+
+.prof-update-line input{
+    border-radius: 4px;
+    outline: none;
+    border: solid 2px #860000;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+
+}
+
+.p-update-btn{
+    margin: 40px 50px;
+    padding: 20px 0;
+    color: white;
+    background-color: #860000;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+
+}
+
+.new-user-box{
+    border: 2px solid #860000;
+    border-radius: 8px;
+    height: fit-content;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffc700;
+}
+
+
+.r-p-update-heading{
+    width: 100%;
+    text-align: center;
+    color: black;
+    padding: 20px 0 0 0;
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+
+.r-prof-update-line{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 50px;
+    height:80px;
+    
+}
+
+.r-u-label{
+    color:black;
+    display: flex;
+    font-weight: 600;
+}
+
+.r-prof-update-line input{
+    border-radius: 4px;
+    outline: none;
+    border: solid 2px #860000;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+    
+}
+
+.r-p-update-btn{
+    margin: 40px 50px;
+    padding: 20px 0;
+    color: white;
+    background-color: #860000;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+
+}
+
+.logout-wrapper{
+    display: flex;
+    border:solid 2px #860000;
+    border-radius: 4px;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.current{
+    color: black;
+    font-size: 20px;
+   
+    
+}
+
+.current span{
+    color: black;
+    font-weight: 600;
+    padding: 0 5px 0 20px;
+   
+    font-size: 20px;
+  
+
+
+}
+
+.plogoutbtn{
+    background-color: #860000;
+    color: white;
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.profile-right-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
